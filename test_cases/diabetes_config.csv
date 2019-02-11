@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/diabetes.csv
+label,supervised
+ColumnsConsidered,"Outcome,Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age"
+Imputation,mean
+Target,Outcome
+Classifier,NN
+ModelingType,classification
+separator,","

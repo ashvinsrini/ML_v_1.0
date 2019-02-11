@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/ames.csv
+label,supervised
+ColumnsConsidered,"SalePrice,MSSubClass,MSZoning,LotFrontage"
+Imputation,mean
+Target,SalePrice
+Classifier,Linear
+ModelingType,regression
+separator,","

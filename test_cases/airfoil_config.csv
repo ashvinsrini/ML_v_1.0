@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/airfoil.csv
+label,supervised
+ColumnsConsidered,"Frequency,Angle of attack,Free-stream velocity,Chord length,Suction side,sound pressure"
+Imputation,mean
+Target,sound pressure
+Classifier,RandomForest
+ModelingType,regression
+separator,\t

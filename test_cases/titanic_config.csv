@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/titanic.csv
+label,supervised
+ColumnsConsidered,"Survived,Pclass,Sex,Age,SibSp,Fare,Embarked"
+Imputation,mean
+Target,Survived
+Classifier,RF
+ModelingType,classification
+separator,","

@@ -1,0 +1,6 @@
+Parameters,Value
+label,sentiment
+paths,"/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/positive.txt,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/negative.txt"
+numOfCat,2
+catType,"pos,neg"
+train,TRUE

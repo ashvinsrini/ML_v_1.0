@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/iris.csv
+label,unsupervised
+ColumnsConsidered,None
+Imputation,mean
+Target,Outcome
+Classifier,NN
+ModelingType,classification
+separator,","

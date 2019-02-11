@@ -1,0 +1,9 @@
+Parameters,Value
+separator,;
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/Absenteeism_at_work.csv
+label,supervised
+ColumnsConsidered,None
+Imputation,mean
+Target,Absenteeism time in hours
+Classifier,Linear
+ModelingType,regression

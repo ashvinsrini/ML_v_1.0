@@ -1,0 +1,9 @@
+Parameters,Value
+filepath,/Users/ashvinsrinivasan/Desktop/UnderDevelopment/datasets/Boston.csv
+label,supervised
+ColumnsConsidered,"crim,zn,indus,chas,nox,rm,age,dis,rad,tax,ptratio,black,lstat,medv"
+Imputation,mean
+Target,medv
+Classifier,RandomForest
+ModelingType,regression
+separator,","
