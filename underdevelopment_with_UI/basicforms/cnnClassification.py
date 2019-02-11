@@ -4,7 +4,10 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D
+from sklearn.model_selection import train_test_split
 import os
+import pandas as pd
+import numpy as np
 class cnn:
     def __init__(self, batch_size, num_classes, epochs, opt, data_augment):
         self.batch_size = int(batch_size)
@@ -119,3 +122,23 @@ class cnn:
         x_train /= 255
         x_test /= 255
         scores = self.modelTraining(mod, x_train, x_test, y_train, y_test, self.data_augment)
+
+    def trainFromCSV(self, filepath, target, imght, imgwdt, rgb):
+        df = pd.read_csv(filepath)
+        feats = df.drop(columns = [target])
+        lab = df[target]
+        x_train, x_test, y_train, y_test = train_test_split(feats, lab, test_size=0.33, random_state=42)
+        x_train.reset_index(inplace = True, drop = True)
+        x_test.reset_index(inplace = True, drop = True)
+        trainImgs = np.array([np.array(x_train.loc[i,:]).reshape(imght,imgwdt,rgb) for i in range(len(x_train))])
+        testImgs = np.array([np.array(x_test.loc[i,:]).reshape(imght,imgwdt,rgb) for i in range(len(x_test))])
+        y_train = keras.utils.to_categorical(y_train.values, self.num_classes)
+        y_test = keras.utils.to_categorical(y_test.values, self.num_classes)
+        shape = trainImgs.shape[1:]
+        mod = self.designModel(shape, self.num_classes, self.opt)
+
+        trainImgs = trainImgs.astype('float32')
+        testImgs = testImgs.astype('float32')
+        trainImgs /= 255
+        testImgs /= 255
+        scores = self.modelTraining(mod, trainImgs, testImgs, y_train, y_test, self.data_augment)

@@ -158,3 +158,18 @@ class CV:
             data_augment = configDf.loc['data_augmentation', 'Value']
             cnnNet = c.cnn(batch_size,num_classes,epochs,opt, data_augment)
             cnnNet.demo()
+        else:
+            batch_size = configDf.loc['batch_size', 'Value']
+            num_classes = configDf.loc['num_classes', 'Value']
+            epochs = configDf.loc['Epochs', 'Value']
+            opt = configDf.loc['optimizer', 'Value']
+            data_augment = configDf.loc['data_augmentation', 'Value']
+            cnnNet = c.cnn(batch_size,num_classes,epochs,opt, data_augment)
+
+            filepath = configDf.loc['filepath', 'Value']
+            target = configDf.loc['target', 'Value']
+            imght = int(configDf.loc['imght', 'Value'])
+            imgwdt = int(configDf.loc['imgwdt', 'Value'])
+            rgb = int(configDf.loc['rgb', 'Value'])
+
+            cnnNet.trainFromCSV(filepath, target, imght, imgwdt, rgb)

@@ -2,13 +2,17 @@ from django import forms
 class FormName(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
-    batch_size = forms.CharField(widget = forms.Textarea)
-    num_classes = forms.CharField(widget = forms.Textarea)
-    Epochs = forms.CharField(widget = forms.Textarea)
-    optimizer = forms.CharField(widget = forms.Textarea)
-    data_augmentation = forms.CharField(widget = forms.Textarea)
-    demo = forms.CharField(widget = forms.Textarea)
-
+    batch_size = forms.CharField()
+    num_classes = forms.CharField()
+    Epochs = forms.CharField()
+    optimizer = forms.CharField()
+    data_augmentation = forms.CharField()
+    demo = forms.CharField()
+    filepath = forms.CharField()
+    target = forms.CharField()
+    imght = forms.CharField()
+    imgwdt = forms.CharField()
+    rgb = forms.CharField()
 
 
 def clean(self):

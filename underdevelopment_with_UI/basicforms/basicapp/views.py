@@ -107,7 +107,8 @@ def computervision(request):
         #print("text:"+form.cleaned_data['input'])
         #df = pd.read_csv(form.cleaned_data['input'])
         #df.to_csv(form.cleaned_data['output'])
-        entries = ['batch_size', 'num_classes', 'Epochs','optimizer','data_augmentation','demo']
+        entries = ['batch_size', 'num_classes', 'Epochs','optimizer','data_augmentation','demo',
+                    'filepath','target','imght','imgwdt','rgb']
         df = pd.DataFrame()
         i = 0
         for entry in entries:
